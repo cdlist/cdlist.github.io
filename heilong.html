@@ -1,0 +1,21 @@
+<html>  
+<head>  
+<meat http-equiv="Context-Type" content="text/html;charset=UTF-8">
+<title>黑龙更新</title>  
+</head> 
+<body> 
+	<div><a>下次黑龙刷新时间：</a><a id="hl"></a></div>
+	<div><a>黑龙刷新剩余时间：</a><a id="left"></a></div>
+</body> 
+<script type="text/javascript">
+	var d = new Date(1574114400000);
+	var now = new Date();
+	while(now.getTime()-d.getTime()>432000000){
+		d = new Date(d.getTime() + 432000000);
+	}
+	d = new Date(d.getTime() + 432000000 + 1000*60*60 );
+	var left = (d.getTime() - now.getTime())/1000;
+	document.getElementById("hl").innerHTML = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()+" "+d.getHours()+":00 AM"
+	document.getElementById("left").innerHTML = Math.floor(left/3600) + "小时" + Math.floor((left/3600 - (Math.floor(left/3600)))*60) + "分钟"
+</script>
+</html> 
